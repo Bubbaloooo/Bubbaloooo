@@ -44,10 +44,7 @@ const Navigation = ({ activeTab, onTabChange }) => {
                 <div className="tab-icon">
                   <IconComponent size={20} />
                 </div>
-                <div className="tab-content">
-                  <span className="tab-label">{tab.label}</span>
-                  <span className="tab-description">{tab.description}</span>
-                </div>
+                <span className="tab-label">{tab.label}</span>
               </button>
             )
           })}
