@@ -1,0 +1,208 @@
+/* CSS Variables for Color Palette */
+:root {
+  --cream: #F5F5DC;
+  --soft-brown: #D2B48C;
+  --muted-brown: #A0522D;
+  --light-gray: #F8F8FF;
+  --vintage-white: #FFFDD0;
+  --dark-brown: #8B4513;
+  --medium-brown: #CD853F;
+  --shadow-color: rgba(139, 69, 19, 0.2);
+  --text-shadow: rgba(139, 69, 19, 0.1);
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--dark-brown);
+  background: linear-gradient(135deg, var(--cream) 0%, var(--vintage-white) 100%);
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+/* Paper Texture Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 50%, transparent 20%, rgba(255, 255, 255, 0.3) 21%, rgba(255, 255, 255, 0.3) 34%, transparent 35%, transparent),
+    linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0.05) 76%, transparent 77%, transparent);
+  background-size: 50px 50px;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* App Container */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Tab Content */
+.tab-content {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Typography */
+h1 {
+  font-size: 2.5rem;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--dark-brown);
+  text-shadow: 1px 1px 2px var(--text-shadow);
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: normal;
+  margin-bottom: 1.5rem;
+  color: var(--dark-brown);
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-bottom: 1rem;
+  color: var(--dark-brown);
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+  color: var(--dark-brown);
+}
+
+/* Button Styles */
+.btn {
+  background: var(--vintage-white);
+  border: 2px solid var(--soft-brown);
+  color: var(--dark-brown);
+  padding: 0.75rem 1.5rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  background: var(--cream);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+/* Card Styles */
+.card {
+  background: var(--vintage-white);
+  border: 1px solid var(--soft-brown);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 49%, rgba(160, 82, 45, 0.1) 50%, transparent 51%);
+  pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 0.5rem;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  .card {
+    padding: 1rem;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--soft-brown);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-brown);
+}

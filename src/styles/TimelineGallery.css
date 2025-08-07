@@ -1,0 +1,456 @@
+/* Timeline Gallery Styles */
+.timeline-gallery {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.timeline-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.timeline-title {
+  font-size: 2.5rem;
+  font-weight: normal;
+  color: var(--dark-brown);
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px var(--text-shadow);
+}
+
+.timeline-subtitle {
+  font-size: 1.2rem;
+  color: var(--muted-brown);
+  font-style: italic;
+  margin: 0;
+}
+
+/* Picture Grid Styles */
+.picture-grid {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 2rem 0;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--soft-brown) 10%,
+    var(--soft-brown) 90%,
+    transparent 100%
+  );
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.picture-item {
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) translateX(var(--translate-x, 0));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(var(--translate-x, 0));
+  }
+}
+
+/* Polaroid Frame Styles */
+.polaroid-frame {
+  background: var(--vintage-white);
+  padding: 1rem 1rem 3rem 1rem;
+  border-radius: 5px;
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 6px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  width: 280px;
+  transform-origin: center center;
+}
+
+.polaroid-frame:hover {
+  transform: rotate(0deg) scale(1.05) !important;
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.15),
+    0 12px 40px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+.polaroid-inner {
+  position: relative;
+}
+
+.polaroid-image-container {
+  width: 100%;
+  height: 200px;
+  background: var(--cream);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.polaroid-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.polaroid-image.loaded {
+  opacity: 1;
+}
+
+.polaroid-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  background: linear-gradient(135deg, var(--cream), var(--vintage-white));
+}
+
+.polaroid-placeholder.loading {
+  background: linear-gradient(
+    90deg,
+    var(--cream) 25%,
+    var(--vintage-white) 50%,
+    var(--cream) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.loading-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.loading-dots span {
+  width: 8px;
+  height: 8px;
+  background: var(--muted-brown);
+  border-radius: 50%;
+  animation: bounce 1.4s ease-in-out infinite both;
+}
+
+.loading-dots span:nth-child(1) { animation-delay: -0.32s; }
+.loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+.error-icon {
+  font-size: 2rem;
+  opacity: 0.5;
+}
+
+.polaroid-placeholder.error p {
+  color: var(--dark-brown);
+  font-style: italic;
+  margin: 0;
+  opacity: 0.7;
+}
+
+.polaroid-caption {
+  padding: 1rem 0.5rem 0.5rem 0.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.polaroid-date {
+  font-size: 0.9rem;
+  color: var(--dark-brown);
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  font-weight: 500;
+}
+
+.polaroid-tape {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 40px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.polaroid-shadow {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: -5px;
+  bottom: -5px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: -1;
+  filter: blur(5px);
+}
+
+.polaroid-corner {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 3px solid transparent;
+}
+
+.polaroid-corner.top-left {
+  top: 0;
+  left: 0;
+  border-top-color: rgba(0, 0, 0, 0.1);
+  border-left-color: rgba(0, 0, 0, 0.1);
+}
+
+.polaroid-corner.top-right {
+  top: 0;
+  right: 0;
+  border-top-color: rgba(0, 0, 0, 0.1);
+  border-right-color: rgba(0, 0, 0, 0.1);
+}
+
+.polaroid-corner.bottom-left {
+  bottom: 0;
+  left: 0;
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+  border-left-color: rgba(0, 0, 0, 0.1);
+}
+
+.polaroid-corner.bottom-right {
+  bottom: 0;
+  right: 0;
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+  border-right-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+.modal-content {
+  background: var(--vintage-white);
+  border-radius: 15px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--soft-brown);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--soft-brown);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  color: var(--dark-brown);
+}
+
+.modal-close:hover {
+  background: var(--cream);
+  transform: scale(1.1);
+}
+
+.modal-image-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 15px 15px 0 0;
+}
+
+.modal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  padding: 2rem 2rem 1rem 2rem;
+  color: white;
+}
+
+.modal-date {
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.modal-text {
+  padding: 2rem;
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  font-weight: normal;
+  color: var(--dark-brown);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.modal-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--dark-brown);
+  text-align: justify;
+  margin-bottom: 2rem;
+}
+
+.modal-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.modal-decoration .decoration-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--muted-brown), transparent);
+}
+
+.modal-decoration .decoration-heart {
+  font-size: 1.5rem;
+  color: var(--muted-gold);
+  animation: gentle-pulse 3s ease-in-out infinite;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .timeline-gallery {
+    padding: 1rem 0;
+  }
+  
+  .timeline-title {
+    font-size: 2rem;
+  }
+  
+  .timeline-subtitle {
+    font-size: 1rem;
+  }
+  
+  .picture-grid {
+    gap: 2rem;
+  }
+  
+  .picture-item {
+    transform: translateX(0) !important;
+  }
+  
+  .timeline-line {
+    display: none;
+  }
+  
+  .polaroid-frame {
+    width: 250px;
+  }
+  
+  .polaroid-image-container {
+    height: 180px;
+  }
+  
+  .modal-overlay {
+    padding: 1rem;
+  }
+  
+  .modal-image-container {
+    height: 250px;
+  }
+  
+  .modal-text {
+    padding: 1.5rem;
+  }
+  
+  .modal-title {
+    font-size: 1.5rem;
+  }
+  
+  .modal-description {
+    font-size: 1rem;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .polaroid-frame {
+    width: 220px;
+  }
+  
+  .polaroid-image-container {
+    height: 160px;
+  }
+  
+  .modal-image-container {
+    height: 200px;
+  }
+  
+  .modal-text {
+    padding: 1rem;
+  }
+  
+  .modal-title {
+    font-size: 1.3rem;
+  }
+  
+  .modal-description {
+    font-size: 0.95rem;
+  }
+}
