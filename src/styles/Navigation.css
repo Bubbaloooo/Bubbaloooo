@@ -1,12 +1,12 @@
 /* Navigation Styles */
 .navigation {
-  background: linear-gradient(135deg, var(--vintage-white) 0%, var(--cream) 100%);
-  border-bottom: 2px solid var(--soft-brown);
-  box-shadow: 0 2px 10px var(--shadow-color);
+  background: linear-gradient(135deg, var(--cream-white) 0%, var(--warm-beige) 50%, rgba(168, 218, 220, 0.3) 100%);
+  border-bottom: 3px solid var(--sage-green);
+  box-shadow: 0 4px 20px var(--shadow-color), 0 0 15px var(--glow-color);
   position: sticky;
   top: 0;
   z-index: 100;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
 }
 
 .nav-container {
@@ -25,11 +25,12 @@
 
 .brand-title {
   font-size: 1.5rem;
-  font-weight: normal;
-  color: var(--dark-brown);
+  font-weight: 300;
+  color: var(--forest-green);
   margin: 0;
-  text-shadow: 1px 1px 2px var(--text-shadow);
-  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px var(--text-shadow);
+  letter-spacing: 2px;
+  font-family: 'Georgia', serif;
 }
 
 .nav-tabs {
@@ -39,21 +40,23 @@
 }
 
 .nav-tab {
-  background: transparent;
-  border: 2px solid transparent;
-  color: var(--dark-brown);
+  background: linear-gradient(135deg, rgba(255, 248, 231, 0.6), rgba(244, 228, 188, 0.6));
+  border: 2px solid var(--sage-green);
+  color: var(--forest-green);
   padding: 0.5rem 0.75rem;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Georgia', serif;
   font-size: 0.9rem;
-  border-radius: 8px;
+  border-radius: 20px;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   gap: 0.4rem;
   position: relative;
   overflow: hidden;
   min-height: 36px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(107, 142, 90, 0.1);
 }
 
 .nav-tab::before {
@@ -63,8 +66,8 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(160, 82, 45, 0.2), transparent);
-  transition: left 0.5s ease;
+  background: linear-gradient(90deg, transparent, var(--glow-color), transparent);
+  transition: left 0.6s ease;
 }
 
 .nav-tab:hover::before {
@@ -72,24 +75,24 @@
 }
 
 .nav-tab:hover {
-  background: var(--cream);
-  border-color: var(--soft-brown);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--shadow-color);
+  background: linear-gradient(135deg, var(--soft-blue), var(--dusty-pink));
+  border-color: var(--muted-teal);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px var(--shadow-color), 0 0 15px var(--glow-color);
 }
 
 .nav-tab.active {
-  background: var(--muted-brown);
-  border-color: var(--dark-brown);
-  color: var(--vintage-white);
-  box-shadow: 0 4px 15px rgba(160, 82, 45, 0.4);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, var(--muted-teal), var(--sage-green));
+  border-color: var(--forest-green);
+  color: var(--cream-white);
+  box-shadow: 0 6px 25px rgba(107, 142, 90, 0.4), 0 0 20px var(--glow-color);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .nav-tab.active .tab-icon,
 .nav-tab.active .tab-label,
 .nav-tab.active .tab-description {
-  color: var(--vintage-white);
+  color: var(--cream-white);
 }
 
 .tab-icon {

@@ -121,7 +121,7 @@
 /* Typewriter Effect */
 .typewriter {
   overflow: hidden;
-  border-right: 2px solid var(--dark-brown);
+  border-right: 2px solid var(--forest-green);
   white-space: nowrap;
   margin: 0 auto;
   animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
@@ -141,7 +141,7 @@
     border-color: transparent;
   }
   50% {
-    border-color: var(--dark-brown);
+    border-color: var(--forest-green);
   }
 }
 
@@ -195,5 +195,149 @@
   }
   50% {
     opacity: 1;
+  }
+}
+
+/* Lofi/Studio Ghibli Animations */
+.dreamy-float {
+  animation: dreamyFloat 6s ease-in-out infinite;
+}
+
+@keyframes dreamyFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(4px) rotate(-0.5deg);
+  }
+}
+
+.gentle-glow {
+  animation: gentleGlow 4s ease-in-out infinite;
+}
+
+@keyframes gentleGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px var(--glow-color);
+  }
+  50% {
+    box-shadow: 0 0 25px var(--glow-color), 0 0 35px rgba(168, 218, 220, 0.2);
+  }
+}
+
+.soft-breathe {
+  animation: softBreathe 8s ease-in-out infinite;
+}
+
+@keyframes softBreathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 1;
+  }
+}
+
+.whimsical-bounce {
+  animation: whimsicalBounce 3s ease-in-out infinite;
+}
+
+@keyframes whimsicalBounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  40% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+  60% {
+    transform: translateY(-6px) rotate(-1deg);
+  }
+}
+
+/* Additional Lofi Animations */
+.organic-sway {
+  animation: organicSway 12s ease-in-out infinite;
+}
+
+@keyframes organicSway {
+  0%, 100% {
+    transform: translateX(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateX(3px) rotate(0.5deg);
+  }
+  50% {
+    transform: translateX(-2px) rotate(-0.3deg);
+  }
+  75% {
+    transform: translateX(1px) rotate(0.2deg);
+  }
+}
+
+.ethereal-drift {
+  animation: etherealDrift 15s ease-in-out infinite;
+}
+
+@keyframes etherealDrift {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0.9;
+  }
+  33% {
+    transform: translateY(-5px) translateX(3px) scale(1.01);
+    opacity: 1;
+  }
+  66% {
+    transform: translateY(3px) translateX(-2px) scale(0.99);
+    opacity: 0.95;
+  }
+}
+
+.gentle-shimmer {
+  animation: gentleShimmer 5s ease-in-out infinite;
+}
+
+@keyframes gentleShimmer {
+  0%, 100% {
+    filter: brightness(1) saturate(1);
+  }
+  50% {
+    filter: brightness(1.1) saturate(1.1);
+  }
+}
+
+.dreamy-pulse {
+  animation: dreamyPulse 7s ease-in-out infinite;
+}
+
+@keyframes dreamyPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 15px var(--glow-color);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 30px var(--glow-color), 0 0 40px rgba(156, 175, 136, 0.2);
+  }
+}
+
+.soft-wiggle {
+  animation: softWiggle 4s ease-in-out infinite;
+}
+
+@keyframes softWiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(1deg);
+  }
+  75% {
+    transform: rotate(-1deg);
   }
 }

@@ -1,9 +1,9 @@
 # TODO:
 
-- [x] create-gitignore: Create .gitignore file to exclude node_modules, dist, and other unnecessary files (priority: High)
-- [x] update-vite-config: Update vite.config.js with base path '/Bubbaloooo/' for GitHub Pages (priority: High)
-- [x] create-github-actions: Create .github/workflows/deploy.yml for automatic GitHub Pages deployment (priority: High)
-- [x] initialize-git: Initialize git repository and add all files (priority: Medium)
-- [x] connect-remote: Connect to GitHub repository https://github.com/Bubbaloooo/Bubbaloooo.git (priority: Medium)
-- [x] push-to-github: Push all code to GitHub repository (priority: Medium)
-- [x] verify-deployment: Verify GitHub Pages deployment is working correctly (priority: Low)
+- [x] examine-timeline-css: Examine TimelineGallery.css to understand current image sizing and container styling (priority: High)
+- [x] increase-image-sizes: Significantly increase image sizes to minimize white space while maintaining good appearance (priority: High)
+- [x] remove-translucent-boxes: Remove translucent background boxes/containers around each image (priority: High)
+- [x] optimize-grid-spacing: Adjust grid spacing to accommodate larger images while keeping layout clean (priority: Medium)
+- [x] test-responsive-sizing: Test the new larger image sizes on both mobile and desktop (priority: Low)
+- [ ] commit-changes: Commit all timeline improvements with descriptive message (**IN PROGRESS**) (priority: High)
+- [ ] push-to-github: Push changes to GitHub using provided Personal Access Token (priority: High)

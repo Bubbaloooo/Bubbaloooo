@@ -13,17 +13,19 @@
 
 .letters-title {
   font-size: 2.5rem;
-  font-weight: normal;
-  color: var(--dark-brown);
+  font-weight: 300;
+  color: var(--forest-green);
   margin-bottom: 1rem;
-  text-shadow: 1px 1px 2px var(--text-shadow);
+  text-shadow: 2px 2px 4px var(--text-shadow);
+  font-family: 'Georgia', serif;
 }
 
 .letters-subtitle {
   font-size: 1.2rem;
-  color: var(--muted-brown);
+  color: var(--muted-teal);
   font-style: italic;
   margin: 0;
+  font-family: 'Georgia', serif;
 }
 
 .letters-container {
@@ -40,17 +42,18 @@
 }
 
 .letter-paper {
-  background: var(--vintage-white);
+  background: linear-gradient(135deg, var(--cream-white), var(--warm-beige));
   width: 100%;
   max-width: 700px;
   padding: 3rem;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 
-    0 10px 30px rgba(0, 0, 0, 0.1),
-    0 1px 8px rgba(0, 0, 0, 0.1);
+    0 15px 40px var(--shadow-color),
+    0 0 20px var(--glow-color);
   position: relative;
-  border: 1px solid var(--soft-brown);
+  border: 2px solid var(--sage-green);
   overflow: hidden;
+  backdrop-filter: blur(10px);
 }
 
 /* Paper texture */
@@ -66,7 +69,7 @@
       0deg,
       transparent,
       transparent 24px,
-      rgba(210, 180, 140, 0.1) 25px
+      rgba(156, 175, 136, 0.1) 25px
     );
   pointer-events: none;
 }
@@ -96,9 +99,9 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--cream);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  background: var(--warm-beige);
+  border: 1px solid rgba(107, 142, 90, 0.2);
+  box-shadow: inset 0 1px 2px rgba(107, 142, 90, 0.1);
 }
 
 .letter-header {
@@ -110,19 +113,21 @@
 
 .letter-title {
   font-size: 2rem;
-  font-weight: normal;
-  color: var(--dark-brown);
+  font-weight: 300;
+  color: var(--forest-green);
   margin-bottom: 0.5rem;
   text-decoration: underline;
-  text-decoration-color: var(--muted-brown);
+  text-decoration-color: var(--muted-teal);
   text-underline-offset: 8px;
+  font-family: 'Georgia', serif;
 }
 
 .letter-date {
   font-size: 1rem;
-  color: var(--muted-gold);
+  color: var(--sage-green);
   font-style: italic;
   margin: 0;
+  font-family: 'Georgia', serif;
 }
 
 .letter-content {
@@ -134,11 +139,11 @@
 .letter-paragraph {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: var(--dark-brown);
+  color: var(--forest-green);
   margin-bottom: 1.5rem;
   text-align: justify;
   text-indent: 2rem;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Georgia', serif;
 }
 
 .letter-paragraph:first-child {
@@ -159,13 +164,13 @@
 .signature-line {
   width: 200px;
   height: 1px;
-  background: var(--soft-brown);
+  background: var(--sage-green);
   margin: 0 0 0.5rem auto;
 }
 
 .signature-text {
   font-size: 1.1rem;
-  color: var(--dark-brown);
+  color: var(--forest-green);
   font-style: italic;
   margin: 0;
   font-family: cursive;
@@ -188,43 +193,46 @@
 }
 
 .nav-btn {
-  background: var(--vintage-white);
-  border: 2px solid var(--soft-brown);
-  color: var(--dark-brown);
+  background: linear-gradient(135deg, var(--cream-white), var(--warm-beige));
+  border: 2px solid var(--sage-green);
+  color: var(--forest-green);
   padding: 0.75rem 1.5rem;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Georgia', serif;
   font-size: 1rem;
   border-radius: 25px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: 0 2px 8px var(--shadow-color);
+  box-shadow: 0 4px 15px var(--shadow-color), 0 0 10px var(--glow-color);
+  backdrop-filter: blur(10px);
 }
 
 .nav-btn:hover:not(.disabled) {
-  background: var(--cream);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--shadow-color);
+  background: linear-gradient(135deg, var(--soft-blue), var(--dusty-pink));
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px var(--shadow-color), 0 0 20px var(--glow-color);
+  border-color: var(--muted-teal);
 }
 
 .nav-btn.disabled {
   opacity: 0.5;
   cursor: not-allowed;
-  background: var(--light-gray);
+  background: var(--lavender-gray);
 }
 
 .letter-indicator {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--dark-brown);
+  color: var(--forest-green);
   font-size: 1rem;
   padding: 0.5rem 1rem;
-  background: var(--cream);
+  background: var(--warm-beige);
   border-radius: 20px;
-  border: 1px solid var(--soft-brown);
+  border: 2px solid var(--sage-green);
+  backdrop-filter: blur(10px);
 }
 
 .letter-dots {
@@ -247,18 +255,19 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--soft-brown);
+  background: var(--sage-green);
   transition: all 0.3s ease;
 }
 
 .dot.active .dot-inner {
-  background: var(--muted-brown);
+  background: var(--muted-teal);
   transform: scale(1.3);
+  box-shadow: 0 0 10px var(--glow-color);
 }
 
 .dot:hover .dot-inner {
   transform: scale(1.2);
-  background: var(--muted-gold);
+  background: var(--soft-peach);
 }
 
 .letter-titles {
@@ -270,32 +279,34 @@
 }
 
 .title-btn {
-  background: var(--vintage-white);
-  border: 1px solid var(--soft-brown);
-  color: var(--dark-brown);
+  background: linear-gradient(135deg, var(--cream-white), var(--warm-beige));
+  border: 2px solid var(--sage-green);
+  color: var(--forest-green);
   padding: 1rem 1.5rem;
-  border-radius: 10px;
+  border-radius: 20px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.25rem;
   min-width: 150px;
-  box-shadow: 0 2px 8px var(--shadow-color);
+  box-shadow: 0 4px 15px var(--shadow-color), 0 0 10px var(--glow-color);
+  backdrop-filter: blur(10px);
 }
 
 .title-btn:hover {
-  background: var(--cream);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--shadow-color);
+  background: linear-gradient(135deg, var(--soft-blue), var(--dusty-pink));
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px var(--shadow-color), 0 0 20px var(--glow-color);
+  border-color: var(--muted-teal);
 }
 
 .title-btn.active {
-  background: var(--muted-gold);
-  color: var(--vintage-white);
-  border-color: var(--dark-brown);
-  box-shadow: 0 4px 15px rgba(160, 82, 45, 0.4);
+  background: linear-gradient(135deg, var(--muted-teal), var(--sage-green));
+  color: var(--cream-white);
+  border-color: var(--forest-green);
+  box-shadow: 0 6px 25px rgba(107, 142, 90, 0.4), 0 0 20px var(--glow-color);
 }
 
 .title-text {
