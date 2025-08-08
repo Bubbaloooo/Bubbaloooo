@@ -6,13 +6,7 @@ const TimelineGallery = ({ onPictureClick, selectedPicture, isModalOpen, onClose
   const [selectedStamp, setSelectedStamp] = useState(null)
   const [isStampModalOpen, setIsStampModalOpen] = useState(false)
 
-  // Prevent body scroll when timeline is active
-  useEffect(() => {
-    document.body.classList.add('timeline-active')
-    return () => {
-      document.body.classList.remove('timeline-active')
-    }
-  }, [])
+
 
   // Image data for organized grid layout
   const imageData = [
