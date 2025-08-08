@@ -31,6 +31,12 @@ body {
   background-attachment: fixed;
 }
 
+/* Prevent body scroll when timeline is active */
+body.timeline-active {
+  overflow: hidden;
+  height: 100vh;
+}
+
 /* Organic Texture Background */
 body::before {
   content: '';

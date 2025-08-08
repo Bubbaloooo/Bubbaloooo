@@ -106,7 +106,28 @@
   box-shadow: 
     inset 0 0 50px rgba(139, 115, 85, 0.2),
     0 10px 30px rgba(139, 115, 85, 0.3);
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar for Paper Background */
+.paper-background::-webkit-scrollbar {
+  width: 8px;
+}
+
+.paper-background::-webkit-scrollbar-track {
+  background: rgba(139, 115, 85, 0.1);
+  border-radius: 10px;
+}
+
+.paper-background::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--sage-green), var(--muted-teal));
+  border-radius: 10px;
+  border: 1px solid rgba(139, 115, 85, 0.2);
+}
+
+.paper-background::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--forest-green), var(--sage-green));
 }
 
 .paper-background::before {
@@ -133,8 +154,8 @@
   gap: 1.5rem;
   padding: 1.5rem;
   width: 100%;
-  height: 100%;
-  align-items: center;
+  min-height: 100%;
+  align-items: start;
   justify-items: center;
 }
 
