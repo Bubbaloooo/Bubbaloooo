@@ -12,14 +12,14 @@ const TimelineGallery = ({ onPictureClick, selectedPicture, isModalOpen, onClose
   const imageData = [
     {
       id: '1',
-      src: '/Bubbaloooo/images/485AAB11-8E69-43F2-B229-7618E6296BCF.PNG',
+      src: '/Bubbaloooo/images/ChatGPT Image Aug 8, 2025 at 07_11_28 PM.png',
       alt: 'Memory Image 1',
       description: 'A beautiful moment captured in time, filled with joy and laughter.',
       popupSrc: 'https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=beautiful%20sunset%20over%20mountains%20studio%20ghibli%20style&image_size=landscape_4_3'
     },
     {
       id: '2', 
-      src: '/Bubbaloooo/images/604A73A6-B5BD-41AF-8DDC-002C4659306A.PNG',
+      src: '/Bubbaloooo/images/ChatGPT Image Aug 8, 2025 at 07_17_13 PM.png',
       alt: 'Memory Image 2',
       description: 'Another precious memory that makes our journey special.',
       popupSrc: 'https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=peaceful%20forest%20path%20with%20soft%20light%20ghibli%20aesthetic&image_size=landscape_4_3'
@@ -61,14 +61,14 @@ const TimelineGallery = ({ onPictureClick, selectedPicture, isModalOpen, onClose
     },
     {
       id: '8',
-      src: '/Bubbaloooo/images/ChatGPT Image Aug 8, 2025 at 07_11_28 PM.png',
+      src: '/Bubbaloooo/images/485AAB11-8E69-43F2-B229-7618E6296BCF.PNG',
       alt: 'Memory Image 8',
       description: 'Special moments that warm the heart.',
       popupSrc: 'https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=enchanted%20flower%20field%20ghibli%20aesthetic&image_size=landscape_4_3'
     },
     {
       id: '9',
-      src: '/Bubbaloooo/images/ChatGPT Image Aug 8, 2025 at 07_17_13 PM.png',
+      src: '/Bubbaloooo/images/604A73A6-B5BD-41AF-8DDC-002C4659306A.PNG',
       alt: 'Memory Image 9',
       description: 'The journey continues with endless possibilities.',
       popupSrc: 'https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=mystical%20castle%20in%20clouds%20studio%20ghibli%20style&image_size=landscape_4_3'
